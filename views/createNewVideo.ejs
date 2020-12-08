@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create New Video Page</title>
+
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="/css/createNew.css" />
+    <script
+      src="https://kit.fontawesome.com/b884a4526c.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="my-5">Create a new Page</h1>
+    <form> 
+      <!-- action="/videos/admin/new-page" method="POST" -->
+      <div class="form-group">
+        <label for="pageName">Page Name</label>
+        <input id="pageName" type="text" class="form-control" name="pageName" />
+      </div>
+
+      <div class="form-group">
+        <label for="logo">Logo URL</label>
+        <input id="logo" type="text" class="form-control" name="logo" />
+      </div>
+
+      <div class="form-group">
+        <label for="hostedPlatform">Hosted Platform of Video</label>
+        <select class="form-control" id="hostedPlatform" name="hostedPlatform">
+          <option>Vimeo</option>
+          <option>Youtube</option>
+          <option>Zoom</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="video">Video URL</label>
+        <input id="video" type="text" class="form-control" name="video" />
+      </div>
+
+      <div class="form-group">
+        <label for="title">Title of Event</label>
+        <input id="title" type="text" class="form-control" name="title" />
+      </div>
+
+      <div class="form-group">
+        <label for="background-color">Background Color</label>
+        <input
+          id="background-color"
+          type="text"
+          class="form-control mb-3"
+          name="backgroundColor"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="logo-background-color"
+          >Background color of logo container</label
+        >
+        <input
+          id="logo-container-background-color"
+          type="text"
+          class="form-control mb-3"
+          name="logoContainerBackgroundColor"
+        />
+      </div>
+
+      <hr>
+      <h1 class="my-3">Sidebar Information</h1>
+
+      <div class="form-check mb-4">
+        <input type="checkbox" class="form-check-input" id="meetingPulseCheck">
+        <label class="form-check-label" for="meetingPulseCheck">Will this sidebar contain a Meeting Pulse?</label>
+      </div>
+
+      <div id="meetingPulseContainer" style="display: none">
+        <div class="form-group">
+          <label for="meeting-pulse-embed"
+            >Meeting Pulse Embed Code</label
+          >
+          <input
+            id="meetingPulseEmbed"
+            type="text"
+            class="form-control mb-3"
+            name="meetingPulseEmbed"
+          />
+        </div>
+      </div>
+
+      <div class="form-check mb-4">
+        <input type="checkbox" class="form-check-input" id="speakerCheck">
+        <label class="form-check-label" for="speakerCheck">Will this sidebar contain speaker(s)?</label>
+      </div>
+
+      <div id="speakerContainer" style="display: none">
+        <form>
+          <div class="form-group">
+            <label for="speaker__image">Speaker Image</label>
+            <input type="text" class="form-control mb-3" name="speakerImage" id="speakerImage">
+          </div>
+          <div class="form-group">
+            <label for="speaker__name">Speaker Name</label>
+            <input type="text" class="form-control mb-3" name="speakerName" id="speakerName">
+          </div>
+          <div class="form-group">
+            <label for="speaker__title">Speaker Title</label>
+            <input type="text" class="form-control mb-3" name="speakerTitle" id="speakerTitle">
+          </div>
+          <div class="form-group">
+            <label for="speaker__organization">Speaker Organization</label>
+            <input type="text" class="form-control mb-3" name="speakerOrganization" id="speakerOrganization">
+          </div>
+          <div class="form-group">
+            <label for="speaker__description">Speaker Description</label>
+            <textarea class="form-control mb-3" name="speakerDescription" id="speakerDescription"></textarea>
+          </div>
+
+          <div id="id__field-container">
+            
+          </div>
+
+          <div id="name-holder">
+              
+          </div>
+
+          <div class="row d-flex justify-content-end">
+            <button class="btn btn-success speaker-button">Add Speaker</button>
+          </div>
+          
+        </form>
+      </div>
+
+
+      <div class="form-check mb-4">
+        <input type="checkbox" class="form-check-input" id="agendaCheck">
+        <label class="form-check-label" for="agendaCheck">Will this sidebar contain an agenda?</label>
+      </div>
+
+      <form class="setAgenda" style="display: none">
+        
+      </form>
+
+      <button type="submit" class="btn btn-primary submit-button my-4">
+        Submit
+      </button>
+
+     
+
+    </div>
+  </form>
+  </body>
+  <script type="module" src="/js/createNewVideo/index.js"></script>
+</html>

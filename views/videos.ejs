@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="/css/allVideos.css" />
+    <script
+      src="https://kit.fontawesome.com/b884a4526c.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <h1 class="mx-auto my-5">All Videos</h1>
+        <a
+          href="/videos/admin/new-page"
+          class="btn btn-primary align-self-center"
+          >Add New +</a
+        >
+      </div>
+
+      <div class="row">
+        <% videos.reverse().forEach(video => { %>
+        <div class="col-md-4 col-sm-6 mb-5">
+          <div class="card">
+            <img
+              class="card-img-top"
+              src="<%= video.logo %>"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <h5 class="card-title text-center mb-3"><%= video.title %></h5>
+              <h5 class="card-title text-center mb-3">
+                <%= video.dateCreated %>
+              </h5>
+              <div class="d-flex justify-content-around align-items-center">
+                <a href="/videos/<%= video.slug %>" class="btn btn-primary"
+                  >View</a
+                >
+                <a href="/videos/<%= video.id %>" class="btn btn-success"
+                  ><i class="fas fa-edit"></i
+                ></a>
+                <button
+                  data-template-id="<%= video.slug %>"
+                  class="btn btn-danger delete-button"
+                >
+                  <i class="fas fa-trash"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+  </body>
+  <script type="module" src="/js/allVideos/index.js"></script>
+</html>

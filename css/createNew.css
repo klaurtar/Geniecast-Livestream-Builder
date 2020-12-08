@@ -1,0 +1,130 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 20;
+  display: none;
+  bottom: 0;
+  right: 0;
+}
+
+.dialog-box {
+  width: 50%;
+  border: none;
+  border-radius: 15px;
+  background-color: rgb(243, 242, 243);
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 30;
+  display: none;
+
+  max-height: calc(100vh - 210px);
+  overflow-y: auto;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 3rem;
+}
+
+.close-icon {
+  text-align: end;
+}
+
+.done-button {
+  margin-right: 10px;
+  background-color: red;
+  color: white;
+  font-size: 1.5rem;
+  padding: 1rem;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cancel-button {
+  background-color: lightseagreen;
+  color: white;
+  font-size: 1.5rem;
+  padding: 1rem;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.x-icon {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.head {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.body {
+  text-align: center;
+}
+
+#delete-input {
+  outline: none;
+  border: none;
+}
+
+#name-holder {
+  width: 100%;
+  display: flex;
+  overflow-y: auto;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.speaker__container {
+  background-color: silver;
+  color: white;
+  border-radius: 5px;
+  padding: 0 5px;
+  width: auto;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+}
+
+.speaker__container:not(:first-child) {
+  margin-left: 20px;
+}
+
+.speaker__container-name {
+  width: 10ch;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.speaker__container-exit {
+  color: black;
+  margin-left: 4px;
+}

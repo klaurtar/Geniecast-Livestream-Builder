@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "pageName": "Geniecast",
+    "slug": "geniecast",
+    "logo": "https://geniecast.com/wp-content/uploads/2018/05/geniecast-grey-logo-horizontal.png",
+    "hostedPlatform": "Youtube",
+    "video": "https://www.youtube.com/embed/c0_ejQQcrwI",
+    "title": "WTTC/CARNIVAL CORPORATION GLOBAL SCIENTIFIC SUMMIT ON COVID-19"
+  },
+  {
+    "id": 2,
+    "pageName": "Unbox Therapy",
+    "slug": "unbox-therapy",
+    "logo": "https://yt3.ggpht.com/-a6zE2RN4RMc/AAAAAAAAAAI/AAAAAAAAAAA/uJt5jt9Fn34/s800-c-k-no-mo-rj-c0xffffff/photo.jpg",
+    "hostedPlatform": "Youtube",
+    "video": "https://www.youtube.com/embed/_AXx2XSI4Kw",
+    "title": "Unveiling the Apple Mask",
+    "backgroundColor": "wheat"
+  },
+  {
+    "id": 3,
+    "pageName": "Pewdiepie",
+    "slug": "pewdiepie",
+    "logo": "https://i.redd.it/7t79mamw52s21.png",
+    "hostedPlatform": "Youtube",
+    "video": "https://www.youtube.com/embed/ddylzqmK9nI",
+    "title": "Biggest Among Us Stream",
+    "backgroundColor": "maroon"
+  },
+  {
+    "id": 4,
+    "pageName": "Express Employment",
+    "slug": "express-employment",
+    "logo": "https://static.wixstatic.com/media/aabda4_cf1155332b414fd0a92bc6f2b202cfce~mv2.png/v1/crop/x_0,y_0,w_645,h_183/fill/w_600,h_162,al_c,q_85,usm_0.66_1.00_0.01/aabda4_cf1155332b414fd0a92bc6f2b202cfce~mv2.webp",
+    "hostedPlatform": "Youtube",
+    "video": "https://www.youtube.com/embed/bm6IMw1cCVc",
+    "title": "Express Employment professionals",
+    "backgroundColor": "cyan"
+  },
+  {
+    "id": 5,
+    "pageName": "BBBS",
+    "slug": "bbbs",
+    "logo": "https://www.bbbs.org/wp-content/uploads/RGB_Primary_BBBSA-black-green-1683x769-16af3a7.png",
+    "hostedPlatform": "Vimeo",
+    "video": "https://player.vimeo.com/video/460652214",
+    "title": "Big Brothers Big Sisters of Southwestern Illinois - Virtual Bash",
+    "backgroundColor": "black"
+  }
+]
