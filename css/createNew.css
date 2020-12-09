@@ -128,3 +128,15 @@ h1 {
   color: black;
   margin-left: 4px;
 }
+
+.eventMasterHolder {
+  padding: 1rem;
+}
+
+.singleEvent:not(:first-child) {
+  margin-top: 1.5rem;
+}
+
+.eventDay:not(:first-child) {
+  margin-top: 1.5rem;
+}
