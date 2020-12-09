@@ -10,7 +10,7 @@ import { DialogManager } from './dialogManager.js';
 
     try {
       let foundData = await fetch(
-        'http://localhost:8080/v1/api/videos/' + deleteButtonSlug
+        process.env.PAGE_URL + '/v1/api/videos/' + deleteButtonSlug
       );
 
       let data = await foundData.json();
@@ -45,11 +45,11 @@ import { DialogManager } from './dialogManager.js';
 
   async function deleteVideo(URL_PARAMS) {
     try {
-      await fetch('http://localhost:8080/videos/' + URL_PARAMS, {
+      await fetch(process.env.PAGE_URL + '/videos/' + URL_PARAMS, {
         method: 'DELETE',
       });
       console.log('Template was succesfully deleted');
-      window.location.href = 'http://localhost:8080/videos/admin';
+      window.location.href = process.env.PAGE_URL + '/videos/admin';
       return true;
     } catch (err) {
       console.log(err);
