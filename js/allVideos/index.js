@@ -1,7 +1,7 @@
 import { DialogManager } from './dialogManager.js';
 
 (function () {
-  const PAGE_URL = 'https://geniecast-livestream-builder.herokuapp.com/';
+  const PAGE_URL = 'https://geniecast-livestream-builder.herokuapp.com';
   const $deleteButtons = document.querySelectorAll('.delete-button');
   console.log($deleteButtons);
 
