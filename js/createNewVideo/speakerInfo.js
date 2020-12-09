@@ -3,7 +3,7 @@ import {
   createNewSpeaker,
   toggleCloseAllSpeakers,
   numberOfSpeakers,
-} from './SpeakerContainerManager.js';
+} from './speakerContainerManager.js';
 import idCreator from '../utils/idCreator.js';
 
 export let speakerInformation = [];
