@@ -1,6 +1,7 @@
 import { DialogManager } from './dialogManager.js';
 
 (function () {
+  const PAGE_URL = 'https://geniecast-livestream-builder.herokuapp.com/';
   const $deleteButtons = document.querySelectorAll('.delete-button');
   console.log($deleteButtons);
 
@@ -10,7 +11,7 @@ import { DialogManager } from './dialogManager.js';
 
     try {
       let foundData = await fetch(
-        process.env.PAGE_URL + '/v1/api/videos/' + deleteButtonSlug
+        PAGE_URL + '/v1/api/videos/' + deleteButtonSlug
       );
 
       let data = await foundData.json();
@@ -45,11 +46,11 @@ import { DialogManager } from './dialogManager.js';
 
   async function deleteVideo(URL_PARAMS) {
     try {
-      await fetch(process.env.PAGE_URL + '/videos/' + URL_PARAMS, {
+      await fetch(PAGE_URL + '/videos/' + URL_PARAMS, {
         method: 'DELETE',
       });
       console.log('Template was succesfully deleted');
-      window.location.href = process.env.PAGE_URL + '/videos/admin';
+      window.location.href = PAGE_URL + '/videos/admin';
       return true;
     } catch (err) {
       console.log(err);

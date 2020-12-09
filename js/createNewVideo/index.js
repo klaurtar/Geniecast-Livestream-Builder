@@ -12,7 +12,7 @@ import {
 import EventHolder from './EventHolder.js';
 
 (function () {
-  // const PAGE_URL = 'http://localhost:8080';
+  const PAGE_URL = 'https://geniecast-livestream-builder.herokuapp.com/';
   const $submitButton = document.querySelector('.submit-button');
   const $speakerButton = document.querySelector('.speaker-button');
 
@@ -94,7 +94,7 @@ import EventHolder from './EventHolder.js';
 
   async function sendData(dataPayload) {
     try {
-      await fetch(process.env.PAGE_URL + '/v1/api/videos', {
+      await fetch(PAGE_URL + '/v1/api/videos', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -102,7 +102,7 @@ import EventHolder from './EventHolder.js';
         body: JSON.stringify(dataPayload),
       });
       console.log('Data was successfully sent');
-      window.location.href = process.env.PAGE_URL + '/videos/admin';
+      window.location.href = PAGE_URL + '/videos/admin';
     } catch (err) {
       console.log(err);
     }
