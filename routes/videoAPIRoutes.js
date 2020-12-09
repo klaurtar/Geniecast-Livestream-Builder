@@ -5,6 +5,6 @@ const router = express.Router();
 
 router.route('/').post(videoAPIControllers.createVideo);
 
-router.route('/:id').get(videoAPIControllers.getVideo);
+router.route('/:slug').get(videoAPIControllers.getVideo);
 
 module.exports = router;
