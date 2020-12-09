@@ -9,14 +9,22 @@ import { DialogManager } from './dialogManager.js';
     const button = e.target;
     const deleteButtonSlug = button.closest('button').dataset.templateId;
 
+    console.log(deleteButtonSlug);
+
     try {
+      var requestOptions = {
+        method: 'GET',
+        redirect: 'follow',
+      };
+
       let foundData = await fetch(
-        PAGE_URL + '/v1/api/videos/' + deleteButtonSlug
+        PAGE_URL + '/v1/api/videos/' + deleteButtonSlug,
+        requestOptions
       );
 
       let data = await foundData.json();
 
-      console.log(data.body);
+      console.log(data);
 
       const dialog = DialogManager.createDialog({ doneButtonText: 'Delete' });
       dialog.open();
