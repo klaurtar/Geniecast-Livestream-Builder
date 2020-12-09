@@ -4,7 +4,7 @@ const AppError = require('../utils/appError');
 const catchAsync = require('../utils/catchAsync');
 
 exports.getVideo = catchAsync(async (req, res, next) => {
-  const foundTemplate = await Template.find({ slug: req.params.slug });
+  const foundTemplate = await Template.findOne({ slug: req.params.slug });
 
   if (!foundTemplate) {
     return next(new AppError('Video was not found with that slug', 404));
@@ -12,7 +12,7 @@ exports.getVideo = catchAsync(async (req, res, next) => {
 
   res.status(200).json({
     status: 'success',
-    body: foundTemplate,
+    body: { foundTemplate },
   });
 });
 
