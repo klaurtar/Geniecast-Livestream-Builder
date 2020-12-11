@@ -94,7 +94,7 @@ import EventHolder from './EventHolder.js';
 
   async function sendData(dataPayload) {
     try {
-      await fetch(PAGE_URL + '/v1/api/videos', {
+      await fetch(PAGE_URL + 'v1/api/videos', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
