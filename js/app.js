@@ -25,6 +25,42 @@ import { closeSidebar, openEverything } from './closeFunctionality/index.js';
      </div>`;
   }
 
+  function agendaCreator(obj) {
+    let agendaHTML = ``;
+
+    obj.forEach((dateHolder) => {
+      agendaHTML += `<div class="agenda">
+      <div class="date">
+        ${dateHolder.date}
+      </div>
+        ${dateHolder.eventInformation.forEach((event) => {
+          agendaHTML += `<div class="agenda-box">
+          <div class="time-slot">
+            <i class="far fa-clock"></i> ${event.startTime} - ${event.endTime}
+          </div>
+          <div class="agenda-information">
+            <div class="title">
+              ${event.eventTitle}
+            </div>
+            <div class="subheading">
+              ${event.eventSubtitle}
+            </div>
+            <div class="moderators">
+              <p class="moderators_title">MODERATORS</p>
+              <p class="moderators_description">${event.moderators}</p>
+            </div>
+            <div class="speakers">
+              <p class="speakers_title">SPEAKERS</p>
+              <p class="speakers_description">${event.speakers}</p>
+            </div>
+          </div>`;
+        })}
+      </div>`;
+    });
+
+    return agendaHTML;
+  }
+
   async function grabSideBarContent() {
     try {
       let foundData = await fetch(PAGE_URL + '/v1/api/videos/' + slug);
@@ -52,6 +88,14 @@ import { closeSidebar, openEverything } from './closeFunctionality/index.js';
       console.log('Speaker Text', speakerText);
       data.speakers.content = speakerText;
       content.push(data.speakers);
+    }
+
+    if (data.agenda) {
+      const agenda = agendaCreator(data.agenda.agendaData);
+
+      console.log('Agenda', agenda);
+      data.agenda.content = agenda;
+      content.push(data.agenda);
     }
 
     console.log(content);
