@@ -34,6 +34,7 @@ import { closeSidebar, openEverything } from './closeFunctionality/index.js';
         ${dateHolder.date}
       </div>
         ${dateHolder.eventInformation.forEach((event) => {
+          console.log(event);
           agendaHTML += `<div class="agenda-box">
           <div class="time-slot">
             <i class="far fa-clock"></i> ${event.startTime} - ${event.endTime}
