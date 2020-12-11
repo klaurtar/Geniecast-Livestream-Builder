@@ -1,7 +1,7 @@
 import { closeSidebar, openEverything } from './closeFunctionality/index.js';
 
 (function app() {
-  const PAGE_URL = 'https://geniecast-livestream-builder.herokuapp.com/';
+  const PAGE_URL = 'https://geniecast-livestream-builder.herokuapp.com';
   const slug = document.querySelector('.video-app').dataset.slug;
 
   let content = [];
