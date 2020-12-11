@@ -1,7 +1,7 @@
 import { closeSidebar, openEverything } from './closeFunctionality/index.js';
 
 (function app() {
-  const PAGE_URL = 'http://localhost:8080';
+  const PAGE_URL = 'https://geniecast-livestream-builder.herokuapp.com/';
   const slug = document.querySelector('.video-app').dataset.slug;
 
   let content = [];
@@ -27,9 +27,7 @@ import { closeSidebar, openEverything } from './closeFunctionality/index.js';
 
   async function grabSideBarContent() {
     try {
-      let foundData = await fetch(
-        process.env.PAGE_URL + '/v1/api/videos/' + slug
-      );
+      let foundData = await fetch(PAGE_URL + '/v1/api/videos/' + slug);
 
       let data = await foundData.json();
 
