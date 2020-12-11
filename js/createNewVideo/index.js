@@ -102,6 +102,7 @@ import EventHolder from './EventHolder.js';
         body: JSON.stringify(dataPayload),
       });
       console.log('Data was successfully sent');
+      console.log(PAGE_URL + 'videos/admin');
       window.location.href = PAGE_URL + ' videos/admin';
     } catch (err) {
       console.log(err);
