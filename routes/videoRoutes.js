@@ -4,7 +4,7 @@ const authController = require('../controllers/authController');
 
 const router = express.Router();
 
-router.post('/admin/login', authController.login);
+// router.post('/admin/login', authController.login);
 //API Route
 
 router
@@ -12,13 +12,13 @@ router
   .get(videoControllers.getVideo)
   .delete(videoControllers.deleteVideo);
 
-router
-  .route('/admin/new-page')
-  .get(videoControllers.getNewPage)
-  .post(videoControllers.createNewVideo);
+// router
+//   .route('/admin/new-page')
+//   .get(videoControllers.getNewPage)
+//   .post(videoControllers.createNewVideo);
 
-router.use(authController.isLoggedIn);
+// router.use(authController.isLoggedIn);
 
-router.route('/admin').get(videoControllers.getAllVideos);
+// router.route('/admin').get(videoControllers.getAllVideos);
 
 module.exports = router;
