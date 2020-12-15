@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #CCCCCC">
+  <a class="navbar-brand" href="/admin">
+    <img style="width: 30%" src="https://media-exp1.licdn.com/dms/image/C560BAQG79NGZJRiCvg/company-logo_200_200/0/1556913590487?e=2159024400&v=beta&t=LBlQHMl4eSixNFcijVr4td-aIhnuPllkjMRAhTi9iJU" alt="Geniecast Logo">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    
+    <div class="ml-auto mr-4 d-flex justify-content-center align-items-center" style="height: 50px; background-color: #F58220; border-radius: 15px; width: 125px">
+      <div>
+        <%= user.name %> 
+        <% if(user.photo) { %>
+          <span><img style="width: 35px; border-radius: 50%" src="<%= user.photo %>" alt=""></span>
+        <% } %>
+      </div>
+    </div>
+
+    <% if(user.role === 'Super Admin') { %>
+      <a class="mr-4" href="/admin/admin-list">Admin List</a>
+    <% } %>
+
+  <button class=" btn btn-danger">Log Out</button>
+  </div>
+</nav>

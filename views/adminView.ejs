@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin List</title>
+
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="/css/adminList.css" />
+    <script
+      src="https://kit.fontawesome.com/b884a4526c.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body style="background: #444444">
+    <%- include('./adminNavbar.ejs') %>
+    <% admins.reverse().forEach(admin => { %>
+       <div class="admin-container my-2">
+           <div class="name"><%= admin.name %></div>
+           <div class="role"><%= admin.role %></div>
+           <div class="timeAdded"><%= admin.simpleTimeAdded %></div>
+           <div class="addedBy">
+
+            <% if(admin.addedBy) { %>
+            <div class="ml-auto mr-4 d-flex justify-content-center align-items-center" style="height: 50px; background-color: #F58220; border-radius: 15px; width: 125px">
+                <div>
+                  <%= admin.addedBy.name %> 
+                  <% if(admin.addedBy.photo) { %>
+                    <span><img style="width: 35px; border-radius: 50%" src="<%= admin.addedBy.photo %>" alt=""></span>
+                  <% } %>
+                </div>
+              </div>
+              <% } else { %>
+                <div class="ml-auto mr-4 d-flex justify-content-center align-items-center" style="height: 50px; background-color: #F58220; border-radius: 15px; width: 125px">
+                    <div>
+                      <%= admin.name %> 
+                      <% if(admin.photo) { %>
+                        <span><img style="width: 35px; border-radius: 50%" src="<%= admin.photo %>" alt=""></span>
+                      <% } %>
+                    </div>
+                  </div>
+            <% } %>
+
+           </div>
+        <div class="options">
+            <button id="<%= admin._id %>" class="btn btn-danger">Delete</button>
+        </div>
+       </div>
+        <% }) %>
+  </body>
+  <script type="module" src="/js/allVideos/index.js"></script>
+</html>

@@ -45,3 +45,9 @@ exports.deleteVideo = catchAsync(async (req, res) => {
 exports.getNewPage = catchAsync(async (req, res) => {
   res.render('createNewVideo');
 });
+
+exports.getLoginForm = (req, res) => {
+  res.status(200).render('login', {
+    title: 'Log into your account',
+  });
+};
