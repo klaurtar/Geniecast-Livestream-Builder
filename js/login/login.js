@@ -1,5 +1,5 @@
 // Put this in script tags https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js
-const PAGE_URL = 'https://geniecast-livestream-builder.herokuapp.com/';
+const PAGE_URL = 'https://geniecast-livestream-builder.herokuapp.com';
 console.log(PAGE_URL + '/api/v1/users/login');
 
 const login = async (email, password) => {
