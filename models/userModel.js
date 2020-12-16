@@ -55,7 +55,7 @@ const userSchema = mongoose.Schema(
     addedBy: { type: mongoose.Schema.ObjectId, ref: 'User' },
     dateCreated: {
       type: Date,
-      default: new Date(),
+      default: Date.now,
     },
   },
   {
