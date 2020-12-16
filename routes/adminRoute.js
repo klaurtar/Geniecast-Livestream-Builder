@@ -10,7 +10,7 @@ router.post('/admin/login', authController.login);
 
 //router.use(authController.isLoggedIn);
 
-router.use(authController.restrictTo(['admin', 'Super Admin']));
+//router.use(authController.restrictTo(['admin', 'Super Admin']));
 
 router.route('/').get(authController.isLoggedIn, videoControllers.getAllVideos);
 
