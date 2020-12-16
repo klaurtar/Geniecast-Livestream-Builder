@@ -65,7 +65,7 @@ const userSchema = mongoose.Schema(
 );
 
 userSchema.virtual('simpleTimeAdded').get(function () {
-  return moment(this.dateCreated).format('MM/DD/YYYY hh:mm:ss');
+  return moment(this.dateCreated).format('MM/DD/YYYY');
 });
 
 userSchema.pre('save', async function (next) {

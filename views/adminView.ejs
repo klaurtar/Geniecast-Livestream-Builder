@@ -22,7 +22,7 @@
            <div class="addedBy">
 
             <% if(admin.addedBy) { %>
-            <div class="ml-auto mr-4 d-flex justify-content-center align-items-center" style="height: 50px; background-color: #F58220; border-radius: 15px; width: 125px">
+            <div class="ml-auto mr-4 d-flex justify-content-center align-items-center" style="height: 50px; background-color: #F58220; border-radius: 15px; width: auto">
                 <div>
                   <%= admin.addedBy.name %> 
                   <% if(admin.addedBy.photo) { %>
@@ -31,7 +31,7 @@
                 </div>
               </div>
               <% } else { %>
-                <div class="ml-auto mr-4 d-flex justify-content-center align-items-center" style="height: 50px; background-color: #F58220; border-radius: 15px; width: 125px">
+                <div class="ml-auto mr-4 d-flex justify-content-center align-items-center" style="height: 50px; background-color: #F58220; border-radius: 15px; width: auto">
                     <div>
                       <%= admin.name %> 
                       <% if(admin.photo) { %>
