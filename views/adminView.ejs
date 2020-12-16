@@ -14,6 +14,68 @@
   </head>
   <body style="background: #444444">
     <%- include('./adminNavbar.ejs') %>
+    <div class="container">
+
+    <div class="mt-3">
+      <button class="btn btn-primary btn-lg add-new-user">Add New User</button>
+    </div>
+
+    <div class="new-user-container">
+      <form>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Name</label>
+          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="John Smith">
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Email address</label>
+          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Password</label>
+          <input type="password" class="form-control" id="password" placeholder="password">
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Password Confirm</label>
+          <input type="password" class="form-control" id="passwordConfirm" placeholder="password confirm">
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Photo (Optional)</label>
+          <input type="text" class="form-control" id="passwordConfirm" placeholder="photo URL here">
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Role</label>
+          <select class="form-control" id="exampleFormControlSelect1">
+            <option>Editor</option>
+            <option>Admin</option>
+            <option>Super Admin</option>
+           
+          </select>
+        </div>
+        
+        <button class="btn btn-lg btn-primary" type="submit">Submit</button>
+      </form>
+    </div>
+      
+    
+      <div class="admin-container mt-5">
+        <div class="name">
+          Name
+        </div>
+        <div class="role">
+          Role
+        </div>
+        <div class="timeAdded">
+          Date Added
+        </div>
+        <div class="addedBy">
+          Added By
+        </div>
+        <div class="options">
+          Options
+        </div>
+      </div>
+
+
     <% admins.reverse().forEach(admin => { %>
        <div class="admin-container my-2">
            <div class="name"><%= admin.name %></div>
@@ -47,6 +109,8 @@
         </div>
        </div>
         <% }) %>
+
+      </div>
   </body>
-  <script type="module" src="/js/allVideos/index.js"></script>
+  <script src="/js/admin/adminList.js"></script>
 </html>

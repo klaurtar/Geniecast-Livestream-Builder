@@ -7,7 +7,7 @@ const login = async (email, password) => {
   try {
     const res = await axios({
       method: 'POST',
-      url: PAGE_URL + '/admin/admin/login',
+      url: PAGE_URL_LOCAL + '/admin/admin/login',
       data: {
         email,
         password,

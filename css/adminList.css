@@ -10,3 +10,49 @@
 
   color: white;
 }
+
+.name {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.role {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.timeAdded {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.addedBy {
+  width: 20%;
+  text-align: center;
+}
+
+.options {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.add-new-user {
+  display: block;
+  margin-left: auto;
+}
+
+label {
+  color: rgba(245, 130, 32, 1);
+}
+
+.new-user-container {
+  display: none;
+}
