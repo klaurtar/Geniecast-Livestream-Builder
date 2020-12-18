@@ -6,7 +6,7 @@ const catchAsync = require('../utils/catchAsync');
 exports.createNewUser = catchAsync(async (req, res) => {
   console.log(req.body);
 
-  // if (!req.body.addedBy) req.body.addedBy = req
+  if (!req.body.addedBy) req.body.addedBy = req.params.id;
 
   const newUser = await User.create(req.body);
 

@@ -24,4 +24,6 @@ router
   .route('/admin-list')
   .get(authController.isLoggedIn, adminController.adminView);
 
+router.route('/:id').delete(adminController.deleteAdmin);
+
 module.exports = router;
