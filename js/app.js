@@ -32,31 +32,33 @@ import { closeSidebar, openEverything } from './closeFunctionality/index.js';
       agendaHTML += `<div class="agenda">
       <div class="date">
         ${dateHolder.date}
-      </div>
-        ${dateHolder.eventInformation.forEach((event) => {
-          console.log(event);
-          agendaHTML += `<div class="agenda-box">
-          <div class="time-slot">
-            <i class="far fa-clock"></i> ${event.startTime} - ${event.endTime}
-          </div>
-          <div class="agenda-information">
-            <div class="title">
-              ${event.eventTitle}
-            </div>
-            <div class="subheading">
-              ${event.eventSubtitle}
-            </div>
-            <div class="moderators">
-              <p class="moderators_title">MODERATORS</p>
-              <p class="moderators_description">${event.moderators}</p>
-            </div>
-            <div class="speakers">
-              <p class="speakers_title">SPEAKERS</p>
-              <p class="speakers_description">${event.speakers}</p>
-            </div>
-          </div>`;
-        })}
       </div>`;
+
+      dateHolder.eventInformation.forEach((event) => {
+        console.log(event);
+        agendaHTML += `<div class="agenda-box">
+        <div class="time-slot">
+          <i class="far fa-clock"></i> ${event.startTime} - ${event.endTime}
+        </div>
+        <div class="agenda-information">
+          <div class="title">
+            ${event.eventTitle}
+          </div>
+          <div class="subheading">
+            ${event.eventSubtitle}
+          </div>
+          <div class="moderators">
+            <p class="moderators_title">MODERATORS</p>
+            <p class="moderators_description">${event.moderators}</p>
+          </div>
+          <div class="speakers">
+            <p class="speakers_title">SPEAKERS</p>
+            <p class="speakers_description">${event.speakers}</p>
+          </div>
+        </div>`;
+      });
+
+      agendaHTML += `</div>`;
     });
 
     return agendaHTML;
