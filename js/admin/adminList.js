@@ -102,7 +102,7 @@ $editButtonAll.forEach((button) => {
     try {
       const res = await axios({
         method: 'GET',
-        url: PAGE_URL_LOCAL + '/admin/' + BUTTON_ID.toString(),
+        url: PAGE_URL + '/admin/' + BUTTON_ID.toString(),
       });
       const { data } = await res;
       const foundAdmin = data.data.admin;
