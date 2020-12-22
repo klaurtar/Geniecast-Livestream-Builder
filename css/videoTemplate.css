@@ -348,6 +348,28 @@ iframe {
   color: white;
 }
 
+.breakout-button {
+  color: white;
+  background-color: red;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  padding: 20px 25px;
+  font-size: 20px;
+  -webkit-box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.75);
+  cursor: pointer;
+
+  transition: all 0.5s;
+}
+
+.breakout-button:hover {
+  background-color: rgb(246, 106, 51);
+  cursor: pointer;
+  transform: translateY(-1px);
+}
+
 @media (min-width: 1281px) {
   .speaker-card {
     height: 40vh;

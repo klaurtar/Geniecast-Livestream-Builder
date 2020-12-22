@@ -75,7 +75,7 @@ import { closeSidebar, openEverything } from './closeFunctionality/index.js';
 
       networkDay.breakoutInformation.forEach((event) => {
         console.log(event);
-        networkHTML += `<div class="date" style="text-align: center">${event.breakOutLink}</div>
+        networkHTML += `<div class="date" style="text-align: center">${event.breakoutTitle}</div>
       
         <div class="time-slot" style="margin: 20px 0; text-align: center">
             <i class="far fa-clock"></i> ${event.startTime} - ${event.endTime}
