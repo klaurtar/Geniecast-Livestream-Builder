@@ -73,7 +73,7 @@ import { closeSidebar, openEverything } from './closeFunctionality/index.js';
         ${networkDay.date}
       </div>`;
 
-      networkDay.eventInformation.forEach((event) => {
+      networkDay.breakoutInformation.forEach((event) => {
         console.log(event);
         networkHTML += `<div class="date" style="text-align: center">${event.breakOutLink}</div>
       
