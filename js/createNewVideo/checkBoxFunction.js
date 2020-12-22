@@ -26,3 +26,12 @@ export function openAgenda() {
     $agendaCheck.style.display = 'none';
   }
 }
+
+export function openBreakout() {
+  const $breakoutCheck = document.querySelector('.setBreakout');
+  if (this.checked) {
+    $breakoutCheck.style.display = 'block';
+  } else {
+    $breakoutCheck.style.display = 'none';
+  }
+}

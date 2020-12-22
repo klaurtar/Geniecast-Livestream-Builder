@@ -64,6 +64,35 @@ import { closeSidebar, openEverything } from './closeFunctionality/index.js';
     return agendaHTML;
   }
 
+  function networkCreator(obj) {
+    let networkHTML = ``;
+
+    obj.forEach((networkDay) => {
+      agendaHTML += `<div class="agenda">
+      <div class="date">
+        ${networkDay.date}
+      </div>`;
+
+      networkDay.eventInformation.forEach((event) => {
+        console.log(event);
+        agendaHTML += `<div class="date" style="text-align: center">${event.breakOutLink}</div>
+      
+        <div class="time-slot" style="margin: 20px 0; text-align: center">
+            <i class="far fa-clock"></i> ${event.startTime} - ${event.endTime}
+          </div>
+          <div style="width: 100%; margin-bottom: 50px;">
+            <a href="${event.breakoutLink}" class="breakout-button" style="text-align: center; display: block; margin: 0 auto">Attend Room</a>
+         </div>
+         <hr class="style-two">
+         `;
+      });
+
+      networkHTML += `</div>`;
+    });
+
+    return networkHTML;
+  }
+
   async function grabSideBarContent() {
     try {
       let foundData = await fetch(PAGE_URL + '/v1/api/videos/' + slug);
@@ -99,6 +128,14 @@ import { closeSidebar, openEverything } from './closeFunctionality/index.js';
       console.log('Agenda', agenda);
       data.agenda.content = agenda;
       content.push(data.agenda);
+    }
+
+    if (data.network) {
+      const network = agendaCreator(data.network.breakoutData);
+
+      console.log('Agenda', agenda);
+      data.network.content = network;
+      content.push(data.network);
     }
 
     console.log(content);
@@ -249,3 +286,10 @@ import { closeSidebar, openEverything } from './closeFunctionality/index.js';
   }
   init();
 })();
+
+//validate color
+// const isColor = (strColor) => {
+//   const s = new Option().style;
+//   s.color = strColor;
+//   return s.color !== '';
+// }

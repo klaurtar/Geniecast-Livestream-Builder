@@ -2,6 +2,7 @@ import {
   checkBoxFunction,
   agendaFunction,
   openAgenda,
+  openBreakout,
 } from './checkBoxFunction.js';
 import {
   speakerInformation,
@@ -10,6 +11,7 @@ import {
   speakerHTML,
 } from './speakerInfo.js';
 import EventHolder from './EventHolder.js';
+import BreakoutHolder from './breakOutLogic/BreakoutHolder.js';
 
 (function () {
   const PAGE_URL = 'https://geniecast-livestream-builder.herokuapp.com/';
@@ -19,6 +21,7 @@ import EventHolder from './EventHolder.js';
   const $meetingPulseCheck = document.querySelector('#meetingPulseCheck');
   const $speakerCheck = document.querySelector('#speakerCheck');
   const $agendaCheck = document.querySelector('#agendaCheck');
+  const $breakoutCheck = document.querySelector('#breakoutCheck');
 
   const $pageName = document.querySelector('#pageName');
   const $logo = document.querySelector('#logo');
@@ -31,6 +34,7 @@ import EventHolder from './EventHolder.js';
   );
   const $meetingPulseEmbed = document.querySelector('#meetingPulseEmbed');
   const $setAgenda = document.querySelector('.setAgenda');
+  const $setBreakout = document.querySelector('.setBreakout');
 
   const EventMaster = new EventHolder();
 
@@ -86,6 +90,13 @@ import EventHolder from './EventHolder.js';
         agendaData: EventMaster.getAllData(),
       };
     }
+    if ($breakoutCheck.checked) {
+      dataStructure['network'] = {
+        name: 'Network',
+        active: false,
+        breakoutData: BreakoutHolder.getAllData(),
+      };
+    }
 
     console.log(dataStructure);
 
@@ -116,11 +127,13 @@ import EventHolder from './EventHolder.js';
     $speakerButton.addEventListener('click', speakerInfo);
     $speakerButton.addEventListener('click', speakerInfo);
     $agendaCheck.addEventListener('click', openAgenda);
+    $breakoutCheck.addEventListener('click', openBreakout);
   }
 
   function init() {
     setUpListeners();
     $setAgenda.append(EventMaster.getEventHolder());
+    $setBreakout.append(BreakoutHolder.getbreakoutHolder());
   }
   init();
 })();

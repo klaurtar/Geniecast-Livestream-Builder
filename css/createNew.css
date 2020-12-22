@@ -140,3 +140,99 @@ h1 {
 .eventDay:not(:first-child) {
   margin-top: 1.5rem;
 }
+
+.breakout-holder {
+  width: 100%;
+  /* border: 1px solid black; */
+
+  box-sizing: border-box;
+}
+
+.heading {
+  /* background-color: grey; */
+  height: 60px;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+
+/* .heading::-webkit-scrollbar {
+  display: none;
+} */
+
+.tab.active {
+  background: linear-gradient(to left, lightgreen 50%, lightgrey 50%) right;
+  background-size: 200%;
+  transition: 0.5s ease-out;
+  z-index: 5000;
+}
+
+.tab {
+  position: relative;
+  font-weight: bold;
+  background-color: lightgrey;
+  color: black;
+  height: 90%;
+  width: 10ch;
+  padding: 0 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border-top: 1px solid black;
+  border-right: 1px solid black;
+  border-left: 1px solid black; */
+  border-radius: 15px 15px 0 0;
+  cursor: pointer;
+  /* tab.active */
+
+  background-color: lightgrey !important;
+  z-index: 5;
+  position: relative;
+}
+
+.tab:not(:first-child) {
+  margin-left: -5px;
+}
+
+.tab::before,
+.tab::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  box-shadow: -3px 0px 4px 1px rgba(0, 0, 0, 0.3);
+  transform: skew(-5deg, -10deg);
+  width: 1px;
+  height: 60%;
+  border-radius: 0;
+  display: none;
+}
+
+.tab::after {
+  left: auto;
+  right: 0;
+  box-shadow: 3px 1px 4px 1px rgba(0, 0, 0, 0.3);
+  transform: skew(5deg, 10deg);
+}
+
+.tab::before,
+.tab::after {
+  z-index: -1;
+  display: block;
+}
+
+.tab.active:first-child::before {
+  display: none;
+}
+
+.tab.active:last-child::after {
+  display: none;
+}
+
+.breakout-hr {
+  background-color: lightgrey;
+  height: 3px;
+}
