@@ -68,14 +68,14 @@ import { closeSidebar, openEverything } from './closeFunctionality/index.js';
     let networkHTML = ``;
 
     obj.forEach((networkDay) => {
-      agendaHTML += `<div class="agenda">
+      networkHTML += `<div class="agenda">
       <div class="date">
         ${networkDay.date}
       </div>`;
 
       networkDay.eventInformation.forEach((event) => {
         console.log(event);
-        agendaHTML += `<div class="date" style="text-align: center">${event.breakOutLink}</div>
+        networkHTML += `<div class="date" style="text-align: center">${event.breakOutLink}</div>
       
         <div class="time-slot" style="margin: 20px 0; text-align: center">
             <i class="far fa-clock"></i> ${event.startTime} - ${event.endTime}
