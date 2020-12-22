@@ -18,7 +18,7 @@ router.route('/').get(authController.isLoggedIn, videoControllers.getAllVideos);
 router
   .route('/new-page')
   .get(videoControllers.getNewPage)
-  .post(videoControllers.createNewVideo);
+  .post(authController.isLoggedIn, videoControllers.createNewVideo);
 
 router
   .route('/admin-list')

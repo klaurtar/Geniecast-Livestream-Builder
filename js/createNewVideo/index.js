@@ -113,8 +113,8 @@ import BreakoutHolder from './breakOutLogic/BreakoutHolder.js';
         body: JSON.stringify(dataPayload),
       });
       console.log('Data was successfully sent');
-      console.log(PAGE_URL + 'videos/admin');
-      window.location.href = PAGE_URL + 'videos/admin';
+      console.log(PAGE_URL + 'admin');
+      window.location.assign('/admin');
     } catch (err) {
       console.log(err);
     }
