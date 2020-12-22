@@ -131,7 +131,7 @@ import { closeSidebar, openEverything } from './closeFunctionality/index.js';
     }
 
     if (data.network) {
-      const network = agendaCreator(data.network.breakoutData);
+      const network = networkCreator(data.network.breakoutData);
 
       console.log('Agenda', agenda);
       data.network.content = network;
