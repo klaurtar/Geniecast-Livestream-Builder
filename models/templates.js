@@ -44,8 +44,8 @@ const templateSchema = new mongoose.Schema({
   agenda: {
     type: Object,
   },
-  network {
-    type: Object
+  network: {
+    type: Object,
   },
   slug: {
     type: String,
