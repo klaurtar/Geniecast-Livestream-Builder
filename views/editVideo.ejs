@@ -16,36 +16,50 @@
     <%- include('./adminNavbar.ejs') %>
     <div class="container">
       <a href="/admin" class="btn btn-danger btn-lg my-5">Back to Admin</a>
-      <h1 class="my-5">Create a new Page</h1>
+      <h1 class="my-5">Edit <span class="page-name"><%= videoData.pageName %></span> Page</h1>
     <form> 
       <!-- action="/videos/admin/new-page" method="POST" -->
       <div class="form-group">
         <label for="pageName">Page Name</label>
-        <input id="pageName" type="text" class="form-control" name="pageName" />
+        <input id="pageName" type="text" class="form-control" name="pageName" value="<%= videoData.pageName %>" />
       </div>
 
       <div class="form-group">
         <label for="logo">Logo URL</label>
-        <input id="logo" type="text" class="form-control" name="logo" />
+        <input id="logo" type="text" class="form-control" name="logo" value="<%= videoData.logo %>" />
       </div>
 
       <div class="form-group">
         <label for="hostedPlatform">Hosted Platform of Video</label>
         <select class="form-control" id="hostedPlatform" name="hostedPlatform">
-          <option>Vimeo</option>
-          <option>Youtube</option>
-          <option>Zoom</option>
+
+            <%if (videoData.hostedPlatform === "Vimeo") { %>
+                <option selected>Vimeo</option>
+                <option>Youtube</option>
+                <option>Zoom</option>
+            <% } %>
+            <%if (videoData.hostedPlatform === "Youtube") { %>
+                <option>Vimeo</option>
+                <option selected>Youtube</option>
+                <option>Zoom</option>
+            <% } %>
+            <%if (videoData.hostedPlatform === "Zoom") { %>
+                <option selected>Vimeo</option>
+                <option>Youtube</option>
+                <option selected>Zoom</option>
+            <% } %>
+
         </select>
       </div>
 
       <div class="form-group">
         <label for="video">Video URL</label>
-        <input id="video" type="text" class="form-control" name="video" />
+        <input id="video" type="text" class="form-control" name="video" value="<%= videoData.video %>"/>
       </div>
 
       <div class="form-group">
         <label for="title">Title of Event</label>
-        <input id="title" type="text" class="form-control" name="title" />
+        <input id="title" type="text" class="form-control" name="title" value="<%= videoData.title %>"/>
       </div>
 
       <div class="form-group">
@@ -55,6 +69,7 @@
           type="text"
           class="form-control mb-3"
           name="backgroundColor"
+          value="<%= videoData.backgroundColor %>"
         />
       </div>
 
@@ -67,12 +82,34 @@
           type="text"
           class="form-control mb-3"
           name="logoContainerBackgroundColor"
+          value="<%= videoData.logoContainerBackgroundColor %>"
         />
       </div>
 
       <hr>
       <h1 class="my-3">Sidebar Information</h1>
+      <% if (videoData.meetingPulseEmbed.content) { %>
+      <div class="form-check mb-4">
+        <input type="checkbox" class="form-check-input" id="meetingPulseCheck" checked="checked">
+        <label class="form-check-label" for="meetingPulseCheck">Will this sidebar contain a Meeting Pulse?</label>
+      </div>
 
+      
+        <div id="meetingPulseContainer" style="display: none">
+          <div class="form-group">
+            <label for="meeting-pulse-embed"
+              >Meeting Pulse Embed Code</label
+            >
+            <input
+              id="meetingPulseEmbed"
+              type="text"
+              class="form-control mb-3"
+              name="meetingPulseEmbed"
+              value="<%= videoData.meetingPulseEmbed.content %>"
+            />
+          </div>
+        </div>
+    <% } else { %>
       <div class="form-check mb-4">
         <input type="checkbox" class="form-check-input" id="meetingPulseCheck">
         <label class="form-check-label" for="meetingPulseCheck">Will this sidebar contain a Meeting Pulse?</label>
@@ -91,6 +128,9 @@
           />
         </div>
       </div>
+      <% } %>
+
+     
 
       <div class="form-check mb-4">
         <input type="checkbox" class="form-check-input" id="speakerCheck">
@@ -163,5 +203,9 @@
     </div>
   </form>
   </body>
-  <script type="module" src="/js/createNewVideo/index.js"></script>
+  <script>
+    // stringify the data passed from router to ejs (within the EJS template only)
+    const videoID = <%- JSON.stringify(videoData.id) %>  
+    </script>
+  <script type="module" src="/js/createNewVideo/editVideo.js"></script>
 </html>

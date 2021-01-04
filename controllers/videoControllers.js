@@ -20,6 +20,14 @@ exports.getVideo = catchAsync(async (req, res, next) => {
   res.render('showVideo', { video: foundVideo }); //{ video: foundVideo }
 });
 
+exports.editVideo = catchAsync(async (req, res, next) => {
+  const foundVideo = await Template.findById(req.params.id);
+
+  if (!foundVideo) return next(new AppError('No video found with that ID'));
+
+  res.render('editVideo', { videoData: foundVideo });
+});
+
 exports.createNewVideo = catchAsync(async (req, res) => {
   console.log(req.body);
   req.body.slug = slugify(req.body.pageName.toLowerCase());

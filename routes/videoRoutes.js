@@ -1,5 +1,6 @@
 const express = require('express');
 const videoControllers = require('../controllers/videoControllers');
+const videoAPIControllers = require('../controllers/videoAPIControllers');
 const authController = require('../controllers/authController');
 
 const router = express.Router();
@@ -16,7 +17,11 @@ router
 //   .route('/admin/new-page')
 //   .get(videoControllers.getNewPage)
 //   .post(videoControllers.createNewVideo);
-
+router.use(authController.isLoggedIn);
+router
+  .route('/edit/:id')
+  .get(videoControllers.editVideo)
+  .patch(videoAPIControllers.updateVideo);
 // router.use(authController.isLoggedIn);
 
 // router.route('/admin').get(videoControllers.getAllVideos);

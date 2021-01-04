@@ -27,3 +27,21 @@ exports.createVideo = catchAsync(async (req, res) => {
     },
   });
 });
+
+exports.updateVideo = catchAsync(async (req, res, next) => {
+  const foundVideo = await Template.findByIdAndUpdate(req.params.id, req.body, {
+    new: true,
+    runValidators: true,
+  });
+
+  if (!foundVideo) {
+    return next(new AppError('No Video found with that ID', 404));
+  }
+
+  res.status(200).json({
+    status: 'success',
+    data: {
+      foundVideo,
+    },
+  });
+});
