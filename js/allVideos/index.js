@@ -58,7 +58,7 @@ import { DialogManager } from './dialogManager.js';
         method: 'DELETE',
       });
       console.log('Template was succesfully deleted');
-      window.assign = '/admin';
+      window.location.assign('/admin');
       return true;
     } catch (err) {
       console.log(err);
