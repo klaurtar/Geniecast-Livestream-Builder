@@ -2,6 +2,11 @@ const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
 const ejs = require('ejs');
+const rateLimit = require('express-rate-limit');
+const helmet = require('helmet');
+const mongoSanitize = require('express-mongo-sanitize');
+const xss = require('xss-clean');
+const hpp = require('hpp');
 
 const cookieParser = require('cookie-parser');
 
@@ -15,6 +20,14 @@ const videoAPIRoutes = require('./routes/videoAPIRoutes');
 
 const app = express();
 
+//Set Security HTTP headers
+app.use(
+  helmet({
+    contentSecurityPolicy: false,
+    policy: 'no-referrer',
+  })
+);
+
 app.set('view engine', 'ejs');
 
 //MIDDLEWARE
@@ -24,8 +37,23 @@ if (process.env.NODE_ENV === 'development') {
   console.log('Morgan reporting in 😎');
 }
 
+const limiter = rateLimit({
+  max: 100,
+  windowMs: 60 * 60 * 1000,
+  message: 'Too many requests from this IP, please try again in an hour!',
+}); //allows 100 requests from the same IP in one hour
+
+app.use('/api', limiter);
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+// Data Sanitization against NoSQL query injection
+app.use(mongoSanitize());
+
+// Data Sanitization against XSS
+app.use(xss());
+
 app.use(cookieParser());
 
 app.use(express.static((__dirname, 'node_modules')));
