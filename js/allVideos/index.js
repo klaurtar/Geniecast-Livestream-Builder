@@ -58,7 +58,7 @@ import { DialogManager } from './dialogManager.js';
         method: 'DELETE',
       });
       console.log('Template was succesfully deleted');
-      window.location.href = PAGE_URL + '/videos/admin';
+      window.assign = '/admin';
       return true;
     } catch (err) {
       console.log(err);
