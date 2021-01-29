@@ -1,5 +1,5 @@
 // Put this in script tags https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js
-const PAGE_URL = 'https://geniecast-video-page-builder.herokuapp.com/';
+const PAGE_URL = 'https://geniecast-video-page-builder.herokuapp.com';
 const PAGE_URL_LOCAL = 'http://localhost:8080';
 console.log(PAGE_URL + '/api/v1/users/login');
 
