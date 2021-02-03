@@ -8,8 +8,6 @@ router.route('/login').get(videoControllers.getLoginForm);
 router.post('/admin/login', authController.login);
 //API Route
 
-//router.use(authController.isLoggedIn);
-
 router.use(authController.protect);
 router.use(authController.restrictTo('admin', 'Super Admin'));
 

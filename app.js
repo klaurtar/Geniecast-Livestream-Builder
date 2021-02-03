@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
-const ejs = require('ejs');
+const User = require('./models/userModel');
 const rateLimit = require('express-rate-limit');
 const helmet = require('helmet');
 const mongoSanitize = require('express-mongo-sanitize');
@@ -65,6 +65,10 @@ app.use((req, res, next) => {
   req.requestTime = new Date().toISOString();
   console.log(req.cookies);
   next();
+});
+
+app.get('/', (req, res) => {
+  res.render('homePage');
 });
 
 app.use('/videos', videoRoutes);
