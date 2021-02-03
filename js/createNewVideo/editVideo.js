@@ -14,7 +14,7 @@ import EventHolder from './EventHolder.js';
 import BreakoutHolder from './breakOutLogic/BreakoutHolder.js';
 
 (function () {
-  const PAGE_URL = 'https://geniecast-livestream-builder.herokuapp.com/';
+  const PAGE_URL = 'https://geniecast-video-page-builder.herokuapp.com/';
   const PAGE_URL_LOCAL = 'http://localhost:8080';
   const $submitButton = document.querySelector('.submit-button');
   const $speakerButton = document.querySelector('.speaker-button');
