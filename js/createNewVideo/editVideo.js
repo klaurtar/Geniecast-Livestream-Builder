@@ -55,6 +55,7 @@ import BreakoutHolder from './breakOutLogic/BreakoutHolder.js';
   let dataStructure = {};
 
   if (videoData.speakers.speakerData.length !== 0) {
+    agendaFunction();
     videoData.speakers.speakerData.forEach((speaker) => {
       createNewSpeaker(speaker);
     });
@@ -125,7 +126,7 @@ import BreakoutHolder from './breakOutLogic/BreakoutHolder.js';
     $meetingPulseCheck.addEventListener('change', checkBoxFunction);
     $speakerCheck.addEventListener('change', agendaFunction);
     $speakerButton.addEventListener('click', speakerInfo);
-    $speakerButton.addEventListener('click', speakerInfo);
+    // $speakerButton.addEventListener('click', speakerInfo);
     $agendaCheck.addEventListener('click', openAgenda);
     $breakoutCheck.addEventListener('click', openBreakout);
   }
