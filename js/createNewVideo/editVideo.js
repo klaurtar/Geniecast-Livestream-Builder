@@ -1,3 +1,5 @@
+console.log(videoData);
+
 import {
   checkBoxFunction,
   agendaFunction,

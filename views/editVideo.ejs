@@ -211,7 +211,8 @@
   </body>
   <script>
     // stringify the data passed from router to ejs (within the EJS template only)
-    const videoID = <%- JSON.stringify(videoData.id) %>  
+    const videoID = <%- JSON.stringify(videoData.id) %>;
+    const videoData = <%- JSON.stringify(videoData) %>;
     </script>
   <script type="module" src="/js/createNewVideo/editVideo.js"></script>
 </html>
