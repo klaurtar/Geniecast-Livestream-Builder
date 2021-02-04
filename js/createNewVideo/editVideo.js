@@ -55,7 +55,9 @@ import BreakoutHolder from './breakOutLogic/BreakoutHolder.js';
   let dataStructure = {};
 
   if (videoData.speakers.speakerData.length !== 0) {
-    agendaFunction();
+    if (document.querySelector('#speakerCheck').checked) {
+      document.querySelector('#speakerContainer').style.display = 'block';
+    }
     videoData.speakers.speakerData.forEach((speaker) => {
       createNewSpeaker(speaker);
     });
