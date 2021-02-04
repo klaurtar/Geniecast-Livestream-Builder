@@ -12,6 +12,7 @@ import {
   speakerHtmlCreator,
   speakerHTML,
 } from './speakerInfo.js';
+import { createNewSpeaker } from './speakerContainerManager.js';
 import EventHolder from './EventHolder.js';
 import BreakoutHolder from './breakOutLogic/BreakoutHolder.js';
 
@@ -51,17 +52,13 @@ import BreakoutHolder from './breakOutLogic/BreakoutHolder.js';
     $logoContainerColor,
   ];
 
-  // let dataStructure = {
-  //   pageName: undefined,
-  //   logo: undefined,
-  //   hostedPlatform: undefined,
-  //   video: undefined,
-  //   title: undefined,
-  //   backgroundColor: undefined,
-  //   logoContainerBackgroundColor: undefined,
-  // };
-
   let dataStructure = {};
+
+  if (videoData.speakers.speakerData.length !== 0) {
+    videoData.speakers.speakerData.forEach((speaker) => {
+      createNewSpeaker(speaker);
+    });
+  }
 
   function grabData(e) {
     e.preventDefault();
