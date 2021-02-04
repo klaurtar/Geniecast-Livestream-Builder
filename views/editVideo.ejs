@@ -131,11 +131,17 @@
       <% } %>
 
      
-
+      <% if (videoData.speakers.speakerData.length !== 0) { %>
       <div class="form-check mb-4">
-        <input type="checkbox" class="form-check-input" id="speakerCheck">
+        <input type="checkbox" class="form-check-input" id="speakerCheck" checked="checked">
         <label class="form-check-label" for="speakerCheck">Will this sidebar contain speaker(s)?</label>
       </div>
+      <% } else { %>
+        <div class="form-check mb-4">
+          <input type="checkbox" class="form-check-input" id="speakerCheck">
+          <label class="form-check-label" for="speakerCheck">Will this sidebar contain speaker(s)?</label>
+        </div>
+      <% } %>
 
       <div id="speakerContainer" style="display: none">
         <form>
