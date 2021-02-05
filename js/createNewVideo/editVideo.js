@@ -10,7 +10,7 @@ import {
   speakerInformation,
   speakerInfo,
   speakerHtmlCreator,
-  speakerHTML,
+  setUpNewSpeakerInstance,
 } from './speakerInfo.js';
 import { createNewSpeaker } from './speakerContainerManager.js';
 import EventHolder from './EventHolder.js';
@@ -59,7 +59,7 @@ import BreakoutHolder from './breakOutLogic/BreakoutHolder.js';
       document.querySelector('#speakerContainer').style.display = 'block';
     }
     videoData.speakers.speakerData.forEach((speaker) => {
-      createNewSpeaker(speaker);
+      setUpNewSpeakerInstance(speaker);
     });
   }
 

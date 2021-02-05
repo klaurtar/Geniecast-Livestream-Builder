@@ -37,23 +37,7 @@ export function speakerInfo(e) {
       speakerDescription: $speakerDescription.value,
     };
 
-    const speakerInfoInNameHolder = createNewSpeaker(speakerDetails);
-    speakerInfoInNameHolder.onClick(() => {
-      const id = speakerInfoInNameHolder.nameClick();
-      const foundSpeaker = speakerInformation.find(
-        (speaker) => speaker.id === id
-      );
-      insertIdInput();
-
-      fillInInfo(foundSpeaker);
-      toggleCloseAllSpeakers(true);
-    });
-    speakerInfoInNameHolder.onClose(() => {
-      console.log('On Close');
-    });
-    // $nameHolder.append(speakerInfoInNameHolder.getSpeakerContainer());
-
-    speakerInformation.push(speakerDetails);
+    setUpNewSpeakerInstance(speakerDetails);
 
     resetForm();
   } else {
@@ -126,7 +110,7 @@ function insertIdInput() {
   }
 }
 
-function fillInInfo(speaker) {
+export function fillInInfo(speaker) {
   const $speakerImage = document.querySelector('#speakerImage');
   const $speakerName = document.querySelector('#speakerName');
   const $speakerTitle = document.querySelector('#speakerTitle');
@@ -143,3 +127,23 @@ function fillInInfo(speaker) {
 }
 
 //Send over to me the presets that we have
+
+export function setUpNewSpeakerInstance(speakerInfo) {
+  const speakerInfoInNameHolder = createNewSpeaker(speakerInfo);
+  speakerInfoInNameHolder.onClick(() => {
+    const id = speakerInfoInNameHolder.nameClick();
+    const foundSpeaker = speakerInformation.find(
+      (speaker) => speaker.id === id
+    );
+    insertIdInput();
+
+    fillInInfo(foundSpeaker);
+    toggleCloseAllSpeakers(true);
+  });
+  speakerInfoInNameHolder.onClose(() => {
+    console.log('On Close');
+  });
+  // $nameHolder.append(speakerInfoInNameHolder.getSpeakerContainer());
+
+  speakerInformation.push(speakerInfo);
+}

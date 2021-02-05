@@ -48,16 +48,6 @@ import BreakoutHolder from './breakOutLogic/BreakoutHolder.js';
     $logoContainerColor,
   ];
 
-  // let dataStructure = {
-  //   pageName: undefined,
-  //   logo: undefined,
-  //   hostedPlatform: undefined,
-  //   video: undefined,
-  //   title: undefined,
-  //   backgroundColor: undefined,
-  //   logoContainerBackgroundColor: undefined,
-  // };
-
   let dataStructure = {};
 
   function grabData(e) {
