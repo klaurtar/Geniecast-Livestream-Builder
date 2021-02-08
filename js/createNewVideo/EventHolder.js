@@ -69,7 +69,15 @@ class EventHolder {
   }
 
   onEdit(info) {
-    console.log(`From edit: ${info}`);
+    console.log(info);
+    info.forEach((date) => {
+      const editDay = new EventDay({ delete: true });
+      this.masterEventHolder.push(editDay);
+
+      editDay.setHeading(`Day ${this.masterEventHolder.indexOf(editDay) + 1}`);
+
+      this.$eventsGoHere.append(editDay.getEventDay());
+    });
   }
 
   setUpListeners() {

@@ -64,7 +64,7 @@ import BreakoutHolder from './breakOutLogic/BreakoutHolder.js';
   }
 
   if (videoData.agenda.agendaData.length !== 0) {
-    EventMaster.onEdit(videoData.agenda.agendaData[0].date);
+    EventMaster.onEdit(videoData.agenda.agendaData);
   }
 
   function grabData(e) {
