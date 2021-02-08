@@ -63,6 +63,10 @@ import BreakoutHolder from './breakOutLogic/BreakoutHolder.js';
     });
   }
 
+  if (videoData.agenda.agendaData.length !== 0) {
+    EventMaster.onEdit(videoData.agenda.agendaData[0].date);
+  }
+
   function grabData(e) {
     e.preventDefault();
     speakerInformation.forEach((speaker) => {

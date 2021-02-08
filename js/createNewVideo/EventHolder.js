@@ -68,6 +68,10 @@ class EventHolder {
     return dataPayload;
   }
 
+  onEdit(info) {
+    console.log(`From edit: ${info}`);
+  }
+
   setUpListeners() {
     this.$addNewButton.addEventListener('click', () => {
       this.createNewDay();
@@ -75,7 +79,6 @@ class EventHolder {
 
     this.$eventHolder.addEventListener('click', (e) => {
       const clickedElement = e.target;
-      // console.dir(clickedElement);
 
       if (clickedElement.classList.contains('deleteDayButton')) {
         const identity = clickedElement.closest('.eventDay').dataset.id;
