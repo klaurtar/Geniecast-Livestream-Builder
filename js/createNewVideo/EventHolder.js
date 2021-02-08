@@ -9,18 +9,18 @@ class EventHolder {
 
     this.$eventHolder.innerHTML = `<div class="eventsGoHere"></div><div class="container text-right"><div class="btn btn-info my-3 addNewButton">Add Day</div><div class="btn btn-dark my-3 ml-3 getAllData">Grab All Data</div></div>`;
 
-    const initialEventDay = new EventDay();
-    this.masterEventHolder.push(initialEventDay);
+    this.initialEventDay = new EventDay();
+    this.masterEventHolder.push(this.initialEventDay);
 
-    initialEventDay.setHeading(
-      `Day ${this.masterEventHolder.indexOf(initialEventDay) + 1}`
+    this.initialEventDay.setHeading(
+      `Day ${this.masterEventHolder.indexOf(this.initialEventDay) + 1}`
     );
 
     this.$eventsGoHere = this.$eventHolder.querySelector('.eventsGoHere');
     this.$addNewButton = this.$eventHolder.querySelector('.addNewButton');
     this.$getAllData = this.$eventHolder.querySelector('.getAllData');
 
-    this.$eventsGoHere.append(initialEventDay.getEventDay());
+    this.$eventsGoHere.append(this.initialEventDay.getEventDay());
 
     this.setUpListeners();
   }
@@ -70,17 +70,24 @@ class EventHolder {
 
   onEdit(info) {
     console.log(info);
-    info.forEach((date) => {
-      const editDay = new EventDay({ delete: true });
-      editDay.editInputDay(date.date);
-      //date.eventInformation => array
-      editDay.createEditInfoForDate(date.eventInformation);
-      this.masterEventHolder.push(editDay);
-      console.log(this.masterEventHolder);
+    info.forEach((date, i) => {
+      if (i === 0) {
+        this.initialEventDay.editInputDay(date.date);
+        this.initialEventDay.createEditInfoForDate(date.eventInformation);
+      } else {
+        const editDay = new EventDay({ delete: true });
+        editDay.editInputDay(date.date);
+        //date.eventInformation => array
+        editDay.createEditInfoForDate(date.eventInformation);
+        this.masterEventHolder.push(editDay);
+        console.log(this.masterEventHolder);
 
-      editDay.setHeading(`Day ${this.masterEventHolder.indexOf(editDay) + 1}`);
+        editDay.setHeading(
+          `Day ${this.masterEventHolder.indexOf(editDay) + 1}`
+        );
 
-      this.$eventsGoHere.append(editDay.getEventDay());
+        this.$eventsGoHere.append(editDay.getEventDay());
+      }
     });
   }
 
