@@ -124,6 +124,12 @@ export default class EventDay {
     this.heading.innerText = str;
   }
 
+  editDay(date) {
+    const $dateInput = this.$eventDay.querySelector('.dayOfEvent');
+
+    $dateInput.value = date;
+  }
+
   setUpListeners() {
     this.$eventDay.addEventListener('click', (e) => {
       const clickedElement = e.target;
