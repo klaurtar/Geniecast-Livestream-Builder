@@ -26,11 +26,11 @@ export default class EventDay {
     this.$dateInput = this.$eventDay.querySelector('.dayOfEvent');
     this.$newEventButton = this.$eventDay.querySelector('.addNewEventButton');
 
-    const initialEventInfo = new EventInfo();
+    this.initialEventInfo = new EventInfo();
 
-    this.eventHolder.push(initialEventInfo);
+    this.eventHolder.push(this.initialEventInfo);
 
-    this.$eventInfoContainer.append(initialEventInfo.getEventInfo());
+    this.$eventInfoContainer.append(this.initialEventInfo.getEventInfo());
 
     this.setUpListeners();
   }
@@ -127,6 +127,19 @@ export default class EventDay {
 
   editInputDay(date) {
     this.$dateInput.value = date;
+  }
+
+  createEditInfoForDate(arrOfInfo) {
+    arrOfInfo.forEach((singleEvent, i) => {
+      if (i === 0) {
+        this.initialEventInfo.setEditInfo(singleEvent);
+      } else {
+        const editEventInfo = new EventInfo({ delete: true });
+        editEventInfo.setEditInfo(singleEvent);
+        this.eventHolder.push(editEventInfo);
+        this.$eventInfoContainer.append(editEventInfo.getEventInfo());
+      }
+    });
   }
 
   setUpListeners() {

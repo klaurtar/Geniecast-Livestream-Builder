@@ -75,6 +75,15 @@ export default class EventInfo {
     this.$eventInfo.remove();
   }
 
+  setEditInfo(obj) {
+    this.$startTime.value = obj.startTime;
+    this.$endTime.value = obj.endTime;
+    this.$eventTitle.value = obj.eventTitle;
+    this.$eventSubtitle.value = obj.eventSubtitle;
+    this.$moderators.value = obj.moderators;
+    this.$speakers.value = obj.speakers;
+  }
+
   pullData() {
     const grabbedData = {
       startTime: this.$startTime.value,
@@ -88,10 +97,4 @@ export default class EventInfo {
     console.log(grabbedData);
     return grabbedData;
   }
-
-  // setUpListeners() {
-  //     this.dataButton.addEventListener('click', () => {
-  //         this.pullData();
-  //     })
-  // }
 }

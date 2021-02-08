@@ -73,6 +73,8 @@ class EventHolder {
     info.forEach((date) => {
       const editDay = new EventDay({ delete: true });
       editDay.editInputDay(date.date);
+      //date.eventInformation => array
+      editDay.createEditInfoForDate(date.eventInformation);
       this.masterEventHolder.push(editDay);
       console.log(this.masterEventHolder);
 
