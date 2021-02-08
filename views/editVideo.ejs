@@ -181,11 +181,17 @@
         </form>
       </div>
 
-
+      <% if (videoData.agenda.agendaData.length !== 0) { %>
       <div class="form-check mb-4">
-        <input type="checkbox" class="form-check-input" id="agendaCheck">
+        <input type="checkbox" class="form-check-input" id="agendaCheck" checked="checked">
         <label class="form-check-label" for="agendaCheck">Will this sidebar contain an agenda?</label>
       </div>
+      <% } else { %>
+        <div class="form-check mb-4">
+          <input type="checkbox" class="form-check-input" id="agendaCheck">
+          <label class="form-check-label" for="agendaCheck">Will this sidebar contain an agenda?</label>
+        </div>
+        <% } %>
 
       <form class="setAgenda" style="display: none">
         
