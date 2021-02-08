@@ -71,8 +71,10 @@ class EventHolder {
   onEdit(info) {
     console.log(info);
     info.forEach((date) => {
-      const editDay = new EventDay({ delete: true }).editDay(date.date);
+      const editDay = new EventDay({ delete: true });
+      editDay.editInputDay(date.date);
       this.masterEventHolder.push(editDay);
+      console.log(this.masterEventHolder);
 
       editDay.setHeading(`Day ${this.masterEventHolder.indexOf(editDay) + 1}`);
 

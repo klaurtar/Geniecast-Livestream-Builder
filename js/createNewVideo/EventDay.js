@@ -23,6 +23,7 @@ export default class EventDay {
     this.$eventInfoContainer = this.$eventDay.querySelector(
       '.eventInfoContainer'
     );
+    this.$dateInput = this.$eventDay.querySelector('.dayOfEvent');
     this.$newEventButton = this.$eventDay.querySelector('.addNewEventButton');
 
     const initialEventInfo = new EventInfo();
@@ -124,10 +125,8 @@ export default class EventDay {
     this.heading.innerText = str;
   }
 
-  editDay(date) {
-    const $dateInput = this.$eventDay.querySelector('.dayOfEvent');
-
-    $dateInput.value = date;
+  editInputDay(date) {
+    this.$dateInput.value = date;
   }
 
   setUpListeners() {
