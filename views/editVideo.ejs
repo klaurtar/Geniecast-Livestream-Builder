@@ -197,11 +197,17 @@
         
       </form>
 
+      <% if (videoData.network.breakoutData.length !== 0) { %>
       <div class="form-check mb-4">
-        <input type="checkbox" class="form-check-input" id="breakoutCheck">
+        <input type="checkbox" class="form-check-input" id="breakoutCheck" checked="checked">
         <label class="form-check-label" for="breakoutCheck">Will this sidebar contain breakout rooms?</label>
       </div>
-
+      <% } else { %>
+        <div class="form-check mb-4">
+          <input type="checkbox" class="form-check-input" id="breakoutCheck">
+          <label class="form-check-label" for="breakoutCheck">Will this sidebar contain breakout rooms?</label>
+        </div>
+      <% } %>
       <form class="setBreakout" style="display: none">
         
       </form>
