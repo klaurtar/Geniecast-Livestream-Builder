@@ -71,8 +71,8 @@ import BreakoutHolder from './breakOutLogic/BreakoutHolder.js';
   }
 
   if (videoData.network.breakoutData.length !== 0) {
-    if (breakoutCheck.checked) {
-      setBreakout.style.display = 'block';
+    if ($breakoutCheck.checked) {
+      $setBreakout.style.display = 'block';
     }
     console.log('Breakout Room edit is working');
   }
