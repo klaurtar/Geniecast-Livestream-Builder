@@ -70,6 +70,13 @@ import BreakoutHolder from './breakOutLogic/BreakoutHolder.js';
     EventMaster.onEdit(videoData.agenda.agendaData);
   }
 
+  if (videoData.network.breakoutData.length !== 0) {
+    if (breakoutCheck.checked) {
+      setBreakout.style.display = 'block';
+    }
+    console.log('Breakout Room edit is working');
+  }
+
   function grabData(e) {
     e.preventDefault();
     speakerInformation.forEach((speaker) => {
