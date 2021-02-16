@@ -18,20 +18,20 @@ class BreakoutHolder {
 <div class="body px-3">
 </div><div style="display: none" class="btn btn-dark my-3 ml-3 getAllData">Grab All Data</div>`;
 
-    const initialBreakoutDay = new BreakoutDay();
-    this.masterBreakoutHolder.push(initialBreakoutDay);
+    this.initialBreakoutDay = new BreakoutDay();
+    this.masterBreakoutHolder.push(this.initialBreakoutDay);
 
     this.$heading = this.$breakoutHolder.querySelector('.heading');
     this.$breakoutsGoHere = this.$breakoutHolder.querySelector('.body');
     this.$addNewButton = this.$breakoutHolder.querySelector('#newBreakoutDay');
     this.$getAllData = this.$breakoutHolder.querySelector('.getAllData');
 
-    this.renderTab(initialBreakoutDay.id);
-    // initialBreakoutDay.setHeading(
-    //   `Day ${this.masterBreakoutHolder.indexOf(initialBreakoutDay) + 1}`
+    this.renderTab(this.initialBreakoutDay.id);
+    // this.initialBreakoutDay.setHeading(
+    //   `Day ${this.masterBreakoutHolder.indexOf(this.initialBreakoutDay) + 1}`
     // );
 
-    this.renderBreakoutDays(initialBreakoutDay.id);
+    this.renderBreakoutDays(this.initialBreakoutDay.id);
 
     this.setUpListeners();
   }
@@ -97,8 +97,8 @@ class BreakoutHolder {
     console.log(info);
     info.forEach((date, i) => {
       if (i === 0) {
-        this.initialBreakoutDay.editBreakoutDay(date.date);
-        this.initialBreakoutDay.createEditInfoForBreakout(
+        this.this.initialBreakoutDay.editBreakoutDay(date.date);
+        this.this.initialBreakoutDay.createEditInfoForBreakout(
           date.breakoutInformation
         );
       } else {
