@@ -97,8 +97,8 @@ class BreakoutHolder {
     console.log(info);
     info.forEach((date, i) => {
       if (i === 0) {
-        this.this.initialBreakoutDay.editBreakoutDay(date.date);
-        this.this.initialBreakoutDay.createEditInfoForBreakout(
+        this.initialBreakoutDay.editBreakoutDay(date.date);
+        this.initialBreakoutDay.createEditInfoForBreakout(
           date.breakoutInformation
         );
       } else {
