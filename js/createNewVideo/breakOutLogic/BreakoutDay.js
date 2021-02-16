@@ -27,7 +27,7 @@ export default class BreakoutDay {
       '.addNewbreakoutButton'
     );
 
-    this.this.initialBreakoutInfo = new BreakoutInfo();
+    this.initialBreakoutInfo = new BreakoutInfo();
     this.$dateInput = this.$breakoutDay.querySelector('dayOfBreakout');
     this.breakoutHolder.push(this.initialBreakoutInfo);
 
