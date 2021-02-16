@@ -1,3 +1,4 @@
+import { fillInInfo } from '../speakerInfo.js';
 import BreakoutDay from './BreakoutDay.js';
 
 class BreakoutHolder {
@@ -90,6 +91,30 @@ class BreakoutHolder {
     console.log(dataPayload);
 
     return dataPayload;
+  }
+
+  onEdit(info) {
+    console.log(info);
+    info.forEach((date, i) => {
+      if (i === 0) {
+        this.initialBreakoutDay.editBreakoutDay(date.date);
+        this.initialBreakoutDay.createEditInfoForBreakout(
+          date.breakoutInformation
+        );
+      } else {
+        const editBreakout = new BreakoutDay({ delete: true });
+        editBreakout.editBreakoutDay(date.date);
+        editBreakout.createEditInfoForBreakout(date.breakoutInformation);
+        this.masterBreakoutHolder.push(editBreakout);
+        console.log(this.masterBreakoutHolder);
+
+        editBreakout.setHeading(
+          `Day ${this.masterBreakoutHolder.indexOf(editBreakout) + 1}`
+        );
+
+        this.$breakoutsGoHere.append(editBreakout.getbreakoutDay());
+      }
+    });
   }
 
   removeActiveTabs() {

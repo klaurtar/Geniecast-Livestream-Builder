@@ -27,11 +27,13 @@ export default class BreakoutDay {
       '.addNewbreakoutButton'
     );
 
-    const initialBreakoutInfo = new BreakoutInfo();
+    this.this.initialBreakoutInfo = new BreakoutInfo();
+    this.$dateInput = this.$breakoutDay.querySelector('dayOfBreakout');
+    this.breakoutHolder.push(this.initialBreakoutInfo);
 
-    this.breakoutHolder.push(initialBreakoutInfo);
-
-    this.$breakoutInfoContainer.append(initialBreakoutInfo.getbreakoutInfo());
+    this.$breakoutInfoContainer.append(
+      this.initialBreakoutInfo.getbreakoutInfo()
+    );
 
     this.setUpListeners();
   }
@@ -114,8 +116,25 @@ export default class BreakoutDay {
     this.$breakoutDay.remove();
   }
 
+  editBreakoutDay(date) {
+    this.$dateInput.value = date;
+  }
+
   setHeading(str) {
     this.heading.innerText = str;
+  }
+
+  createEditInfoForBreakout(arrOfInfo) {
+    arrOfInfo.forEach((singleEvent, i) => {
+      if (i === 0) {
+        this.initialBreakoutInfo.setEditInfo(singleEvent);
+      } else {
+        const editBreakoutInfo = new BreakoutInfo({ delete: true });
+        editBreakoutInfo.setEditInfo(singleEvent);
+        this.breakoutHolder.push(editBreakoutInfo);
+        this.$breakoutInfoContainer.append(editBreakoutInfo.getbreakoutInfo());
+      }
+    });
   }
 
   setUpListeners() {

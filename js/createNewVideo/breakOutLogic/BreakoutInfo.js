@@ -69,6 +69,13 @@ export default class BreakoutInfo {
     return grabbedData;
   }
 
+  setEditInfo(obj) {
+    this.$startTime.value = obj.startTime;
+    this.$endTime.value = obj.endTime;
+    this.$breakoutTitle.value = obj.breakoutTitle;
+    this.$breakoutLink.value = obj.breakoutLink;
+  }
+
   setUpListeners() {
     // this.dataButton.addEventListener('click', () => {
     //   this.pullData();
