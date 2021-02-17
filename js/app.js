@@ -43,8 +43,8 @@ console.log(moment);
           <i class="far fa-clock"></i> ${moment(
             event.startTime,
             'hh:mm'
-          ).format('h:mm:ss A')} - ${moment(event.endTime, 'hh:mm').format(
-          'h:mm:ss A'
+          ).format('h:mm A')} - ${moment(event.endTime, 'hh:mm').format(
+          'h:mm A'
         )}
         </div>
         <div class="agenda-information">
@@ -90,8 +90,8 @@ console.log(moment);
             <i class="far fa-clock"></i> ${moment(
               event.startTime,
               'hh:mm'
-            ).format('h:mm:ss A')} - ${moment(event.endTime, 'hh:mm').format(
-          'h:mm:ss A'
+            ).format('h:mm A')} - ${moment(event.endTime, 'hh:mm').format(
+          'h:mm A'
         )}
           </div>
           <div style="width: 100%; margin-bottom: 50px;">
