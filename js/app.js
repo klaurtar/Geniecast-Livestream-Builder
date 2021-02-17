@@ -82,7 +82,8 @@ console.log(moment);
 
       networkDay.breakoutInformation.forEach((event) => {
         console.log(event);
-        networkHTML += `<div class="date" style="text-align: center">${
+        networkHTML += `<div class="network-box">
+        <div class="date" style="text-align: center">${
           event.breakoutTitle
         }</div>
       
@@ -103,7 +104,7 @@ console.log(moment);
          `;
       });
 
-      networkHTML += `</div>`;
+      networkHTML += `</div></div>`;
     });
 
     return networkHTML;

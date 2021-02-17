@@ -273,6 +273,10 @@ iframe {
   margin: 20px 0;
 }
 
+.network-box {
+  margin: 20px 0;
+}
+
 .time-slot {
   color: rgb(246, 106, 51);
   font-size: 1.1rem;
