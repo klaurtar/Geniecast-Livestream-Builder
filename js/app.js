@@ -1,5 +1,5 @@
 import { closeSidebar, openEverything } from './closeFunctionality/index.js';
-import unformattedDateToUSDate from './utils/unformattedDateToUSDate';
+import unformattedDateToUSDate from './utils/unformattedDateToUSDate.js';
 
 (function app() {
   const PAGE_URL = 'https://geniecast-video-page-builder.herokuapp.com';
