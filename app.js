@@ -77,7 +77,15 @@ app.use('/v1/api/videos', videoAPIRoutes);
 app.use('/v1/api/users', userRoutes);
 
 app.all('*', (req, res, next) => {
-  next(new AppError(`Can't find ${req.originalUrl} on this server`, 404));
+  // respond with html
+  if (req.accepts('html')) {
+    res.render('404');
+  }
+
+  // respond with json
+  if (req.accepts('json')) {
+    next(new AppError(`Can't find ${req.originalUrl} on this server`, 404));
+  }
 });
 
 app.use(globalErrorHandler);
