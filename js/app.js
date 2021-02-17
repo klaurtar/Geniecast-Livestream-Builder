@@ -1,6 +1,8 @@
+import moment from 'moment';
 import { closeSidebar, openEverything } from './closeFunctionality/index.js';
 import unformattedDateToUSDate from './utils/unformattedDateToUSDate.js';
 
+console.log(moment);
 (function app() {
   const PAGE_URL = 'https://geniecast-video-page-builder.herokuapp.com';
   const slug = document.querySelector('.video-app').dataset.slug;
