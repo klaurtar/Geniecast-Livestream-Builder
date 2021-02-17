@@ -33,7 +33,7 @@ console.log(moment);
     obj.forEach((dateHolder) => {
       agendaHTML += `<div class="agenda">
       <div class="date">
-        ${unformattedDateToUSDate(dateHolder.date)}
+        ${moment(dateHolder.date).format('MMMM Do YYYY')}
       </div>`;
 
       dateHolder.eventInformation.forEach((event) => {
@@ -72,7 +72,7 @@ console.log(moment);
     obj.forEach((networkDay) => {
       networkHTML += `<div class="agenda">
       <div class="date">
-        ${unformattedDateToUSDate(networkDay.date)}
+        ${moment(dateHolder.date).format('MMMM Do YYYY')}
       </div>`;
 
       networkDay.breakoutInformation.forEach((event) => {
