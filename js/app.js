@@ -40,7 +40,12 @@ console.log(moment);
         console.log(event);
         agendaHTML += `<div class="agenda-box">
         <div class="time-slot">
-          <i class="far fa-clock"></i> ${event.startTime} - ${event.endTime}
+          <i class="far fa-clock"></i> ${moment(
+            event.startTime,
+            'hh:mm'
+          ).format('h:mm:ss A')} - ${moment(event.endTime, 'hh:mm').format(
+          'h:mm:ss A'
+        )}
         </div>
         <div class="agenda-information">
           <div class="title">
