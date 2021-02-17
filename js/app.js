@@ -77,13 +77,19 @@ console.log(moment);
 
       networkDay.breakoutInformation.forEach((event) => {
         console.log(event);
-        networkHTML += `<div class="date" style="text-align: center">${event.breakoutTitle}</div>
+        networkHTML += `<div class="date" style="text-align: center">${
+          event.breakoutTitle
+        }</div>
       
         <div class="time-slot" style="margin: 20px 0; text-align: center">
-            <i class="far fa-clock"></i> ${event.startTime} - ${event.endTime}
+            <i class="far fa-clock"></i> ${moment(event.startTime).format(
+              'h:mm:ss a'
+            )} - ${moment(event.endTime).format('h:mm:ss a')}
           </div>
           <div style="width: 100%; margin-bottom: 50px;">
-            <a href="${event.breakoutLink}" class="breakout-button" style="text-align: center; display: block; margin: 0 auto">Attend Room</a>
+            <a href="${
+              event.breakoutLink
+            }" class="breakout-button" style="text-align: center; display: block; margin: 0 auto">Attend Room</a>
          </div>
          <hr class="style-two">
          `;
