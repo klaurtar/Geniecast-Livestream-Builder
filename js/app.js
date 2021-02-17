@@ -1,4 +1,5 @@
 import { closeSidebar, openEverything } from './closeFunctionality/index.js';
+import unformattedDateToUSDate from './utils/unformattedDateToUSDate';
 
 (function app() {
   const PAGE_URL = 'https://geniecast-video-page-builder.herokuapp.com';
@@ -31,7 +32,7 @@ import { closeSidebar, openEverything } from './closeFunctionality/index.js';
     obj.forEach((dateHolder) => {
       agendaHTML += `<div class="agenda">
       <div class="date">
-        ${dateHolder.date}
+        ${unformattedDateToUSDate(dateHolder.date)}
       </div>`;
 
       dateHolder.eventInformation.forEach((event) => {
@@ -70,7 +71,7 @@ import { closeSidebar, openEverything } from './closeFunctionality/index.js';
     obj.forEach((networkDay) => {
       networkHTML += `<div class="agenda">
       <div class="date">
-        ${networkDay.date}
+        ${unformattedDateToUSDate(networkDay.date)}
       </div>`;
 
       networkDay.breakoutInformation.forEach((event) => {
