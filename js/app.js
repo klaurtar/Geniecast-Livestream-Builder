@@ -72,7 +72,7 @@ console.log(moment);
     obj.forEach((networkDay) => {
       networkHTML += `<div class="agenda">
       <div class="date">
-        ${moment(dateHolder.date).format('MMMM Do YYYY')}
+        ${moment(networkDay.date).format('MMMM Do YYYY')}
       </div>`;
 
       networkDay.breakoutInformation.forEach((event) => {
