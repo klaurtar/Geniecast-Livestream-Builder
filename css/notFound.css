@@ -16,8 +16,8 @@ body {
 
 .title {
   /* background: rgb(204,204,204);
-background: linear-gradient(0deg, rgba(204,204,204,1) 0%, rgba(245,130,32,1) 100%); */
-  font-size: 72px;
+background: linear-gradient(0deg, rgba(242, 46, 46,1) 0%, rgba(245,130,32,1) 100%); */
+  font-size: 150px;
   font-weight: bold;
   background: -webkit-linear-gradient(
     0deg,
@@ -26,4 +26,9 @@ background: linear-gradient(0deg, rgba(204,204,204,1) 0%, rgba(245,130,32,1) 100
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.supporting-text {
+  font-size: 72px;
+  font-weight: bold;
 }
