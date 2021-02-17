@@ -83,8 +83,8 @@ console.log(moment);
       
         <div class="time-slot" style="margin: 20px 0; text-align: center">
             <i class="far fa-clock"></i> ${moment(event.startTime).format(
-              'h:mm:ss a'
-            )} - ${moment(event.endTime).format('h:mm:ss a')}
+              'h:mm:ss A'
+            )} - ${moment(event.endTime).format('h:mm:ss A')}
           </div>
           <div style="width: 100%; margin-bottom: 50px;">
             <a href="${
