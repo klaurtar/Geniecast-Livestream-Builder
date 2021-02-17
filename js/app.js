@@ -1,4 +1,3 @@
-var moment = require('moment');
 import { closeSidebar, openEverything } from './closeFunctionality/index.js';
 import unformattedDateToUSDate from './utils/unformattedDateToUSDate.js';
 
