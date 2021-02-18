@@ -1,7 +1,7 @@
 import Alert from '../utils/alert.js';
 import { DialogManager } from '../allVideos/dialogManager.js';
 
-const PAGE_URL = 'https://geniecast-livestream-builder.herokuapp.com';
+const PAGE_URL = 'https://geniecast-video-page-builder.herokuapp.com';
 const PAGE_URL_LOCAL = 'http://localhost:8080';
 // console.log(PAGE_URL_LOCAL + '/admin/' + button.id.toString());
 const $addNewUser = document.querySelector('.add-new-user');
