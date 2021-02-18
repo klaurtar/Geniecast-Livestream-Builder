@@ -31,11 +31,7 @@ app.use(
 
 app.set('view engine', 'ejs');
 
-app.use(
-  cors({
-    origin: 'https://geniecast-video-page-builder.herokuapp.com/',
-  })
-);
+app.use(cors());
 
 //MIDDLEWARE
 
