@@ -385,42 +385,49 @@ iframe {
   }
 }
 
-/* 
-  ##Device = Laptops, Desktops
-  ##Screen = B/w 1025px to 1280px
-*/
-
-@media (min-width: 1025px) and (max-width: 1280px) {
+/* Tablet landscape and portrait 12.9" iPad Pro*/
+@media (min-width: 833px) and (max-width: 1024px) {
+  .logo-container {
+    height: 55px;
+    margin-top: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 5px;
+  }
 }
 
-/* 
-  ##Device = Tablets, Ipads (portrait)
-  ##Screen = B/w 768px to 1024px
-*/
+/* Mobile and portrait iPads besides 12.9" iPad Pro*/
+@media (min-width: 320px) and (max-width: 834px) {
+  .video-app {
+    grid-template: repeat(4, 5vh) 40vh 20vh 60vh / repeat(4, 1fr);
+  }
 
-@media (min-width: 768px) and (max-width: 1024px) {
-}
+  .navbar {
+    grid-row: 1/2;
+    grid-column: 1/-1;
+  }
 
-/* 
-  ##Device = Tablets, Ipads (landscape)
-  ##Screen = B/w 768px to 1024px
-*/
+  .video {
+    grid-row: 2/6;
+    grid-column: 1/-1;
+  }
+  .footer {
+    grid-row: 6/7;
+    grid-column: 1/-1;
+  }
 
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-}
-
-/* 
-  ##Device = Low Resolution Tablets, Mobiles (Landscape)
-  ##Screen = B/w 481px to 767px
-*/
-
-@media (min-width: 481px) and (max-width: 767px) {
-}
-
-/* 
-  ##Device = Most of the Smartphones Mobiles (Portrait)
-  ##Screen = B/w 320px to 479px
-*/
-
-@media (min-width: 320px) and (max-width: 480px) {
+  .sidebar {
+    grid-row: 7/-1;
+    grid-column: 1/-1;
+  }
+  .logo-container {
+    grid-row: 1/2;
+    grid-column: 2/4;
+    height: 50px;
+    margin-top: 10px;
+  }
+  .geniecast-presents {
+    font-size: 0.8rem;
+    border: 3px solid white;
+  }
 }
