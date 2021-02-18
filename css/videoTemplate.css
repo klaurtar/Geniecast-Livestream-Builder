@@ -394,6 +394,9 @@ iframe {
     padding-left: 10px;
     padding-top: 5px;
   }
+  .close-container {
+    display: none;
+  }
 }
 
 /* Mobile and portrait iPads besides 12.9" iPad Pro*/
@@ -429,5 +432,8 @@ iframe {
   .geniecast-presents {
     font-size: 0.8rem;
     border: 3px solid white;
+  }
+  .close-container {
+    display: none;
   }
 }
