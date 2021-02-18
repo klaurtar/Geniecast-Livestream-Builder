@@ -7,6 +7,7 @@ const helmet = require('helmet');
 const mongoSanitize = require('express-mongo-sanitize');
 // const xss = require('xss');
 const hpp = require('hpp');
+const cors = require('cors');
 
 const cookieParser = require('cookie-parser');
 
@@ -29,6 +30,12 @@ app.use(
 );
 
 app.set('view engine', 'ejs');
+
+app.use(
+  cors({
+    origin: 'https://geniecast-video-page-builder.herokuapp.com/',
+  })
+);
 
 //MIDDLEWARE
 
@@ -55,6 +62,8 @@ app.use(mongoSanitize());
 // app.use(xss());
 
 app.use(cookieParser());
+
+app.use(compression());
 
 app.use(express.static((__dirname, 'node_modules')));
 app.use('/css', express.static(path.join(__dirname, 'css')));
