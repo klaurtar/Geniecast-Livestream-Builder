@@ -18,7 +18,7 @@ import { DialogManager } from './dialogManager.js';
       };
 
       let foundData = await fetch(
-        PAGE_URL + '/v1/api/videos/' + deleteButtonSlug,
+        PAGE_URL + 'v1/api/videos/' + deleteButtonSlug,
         requestOptions
       );
 
